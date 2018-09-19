@@ -1,7 +1,7 @@
 {
   "name": "rollup-plugin-bpmnlint",
   "version": "0.0.0",
-  "description": "Consume .bpmnlintrc files with rollup",
+  "description": "Convert bpmnlint config files to consumable modules",
   "main": "index.js",
   "scripts": {
     "all": "run-s lint test",
