@@ -1,0 +1,1 @@
+import './bpmnlint-config-error.json';
