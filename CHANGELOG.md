@@ -6,6 +6,10 @@ All notable changes to [rollup-plugin-bpmnlint](https://github.com/nikku/rollup-
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.1.1
+
+* `CHORE`: support `bpmnlint@4`
+
 ## 0.1.0
 
 * `FEAT`: initial release :tada:
