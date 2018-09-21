@@ -32,7 +32,7 @@
     "rollup": "^0.65.2"
   },
   "peerDependencies": {
-    "bpmnlint": "^3.2.0"
+    "bpmnlint": "^3.2.0 || ^4.0.0"
   },
   "dependencies": {
     "rollup-pluginutils": "^2.3.3"
