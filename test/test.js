@@ -73,9 +73,7 @@ describe('rollup-plugin-bpmnlint', function() {
       err = e;
     }
 
-    expect(err).to.exist;
-
-    expect(err.message).to.eql('Failed to compile config: Cannot find module \'bpmnlint-plugin-unknown\'');
+    expectError(err, 'Failed to compile config: Cannot find module \'bpmnlint-plugin-unknown\'');
   });
 
 
@@ -93,9 +91,23 @@ describe('rollup-plugin-bpmnlint', function() {
       err = e;
     }
 
-    expect(err).to.exist;
-
-    expect(err.message).to.eql('Failed to parse config: Unexpected token \n');
+    expectError(err, 'Failed to parse config: Unexpected token \n');
   });
 
 });
+
+
+// helpers //////////////////
+
+function expectError(err, expectedMessage) {
+
+  expect(err).to.exist;
+
+  const message = err.message;
+
+  if (message.startsWith(expectedMessage)) {
+    return;
+  }
+
+  expect(message).to.eql(expectedMessage);
+}
