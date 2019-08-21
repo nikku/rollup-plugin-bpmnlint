@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-bpmnlint",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Convert bpmnlint config files to consumable modules",
   "main": "index.js",
   "scripts": {
