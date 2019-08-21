@@ -75,7 +75,27 @@ describe('rollup-plugin-bpmnlint', function() {
 
     expect(err).to.exist;
 
-    expect(err.message).to.eql('Cannot find module \'bpmnlint-plugin-unknown\'');
+    expect(err.message).to.eql('Failed to compile config: Cannot find module \'bpmnlint-plugin-unknown\'');
+  });
+
+
+  it('should throw when parsing bad JSON', async function() {
+
+    let err;
+
+    try {
+      await createBundle(
+        { input: 'test/fixtures/bad-json-error.js' },
+        { include: /\/bpmnlint-config-bad-json-error.json$/ }
+      );
+
+    } catch (e) {
+      err = e;
+    }
+
+    expect(err).to.exist;
+
+    expect(err.message).to.eql('Failed to parse config: Unexpected token \n');
   });
 
 });

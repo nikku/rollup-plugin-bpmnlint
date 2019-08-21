@@ -25,9 +25,25 @@ function bpmnlint(options = {}) {
         return;
       }
 
-      const config = JSON.parse(code);
+      let config, transformedCode;
 
-      const transformedCode = await compileConfig(config);
+      try {
+        config = JSON.parse(code);
+      } catch (err) {
+
+        const match = /^(Unexpected token \n) in JSON at position (23)$/.exec(err.message);
+
+        const message = match && match[1] || err.message;
+        const position = match && parseInt(match[2], 10);
+
+        return this.error('Failed to parse config: ' + message, position);
+      }
+
+      try {
+        transformedCode = await compileConfig(config);
+      } catch (err) {
+        return this.error('Failed to compile config: ' + err.message);
+      }
 
       return {
         code: transformedCode,
