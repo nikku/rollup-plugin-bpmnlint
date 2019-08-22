@@ -6,6 +6,10 @@ All notable changes to [rollup-plugin-bpmnlint](https://github.com/nikku/rollup-
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.1.4
+
+* `CHORE`: support `bpmnlint@6`
+
 ## 0.1.3
 
 * `CHORE`: improve JSON parse error messages
