@@ -73,7 +73,7 @@ describe('rollup-plugin-bpmnlint', function() {
       err = e;
     }
 
-    expectError(err, 'Failed to compile config: Cannot find module \'bpmnlint-plugin-unknown\'');
+    expectError(err, 'Failed to compile config: Cannot resolve config <base> from <bpmnlint-plugin-unknown>');
   });
 
 
