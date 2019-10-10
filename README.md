@@ -1,6 +1,6 @@
 # rollup-plugin-bpmnlint
 
-[![Build Status](https://travis-ci.org/nikku/rollup-plugin-bpmnlint.svg?branch=master)](https://travis-ci.org/nikku/rollup-plugin-bpmnlint)
+[![Build Status](https://travis-ci.com/nikku/rollup-plugin-bpmnlint.svg?branch=master)](https://travis-ci.com/nikku/rollup-plugin-bpmnlint)
 
 Convert [bpmnlint](https://github.com/bpmn-io/bpmnlint) config files to consumable modules.
 
