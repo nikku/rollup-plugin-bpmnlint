@@ -20,7 +20,11 @@ describe('rollup-plugin-bpmnlint', function() {
       const bundle = await createBundle({ input: 'test/fixtures/basic.js' });
 
       // when
-      const { code } = await bundle.generate({ format: 'iife', moduleName: 'cfg' });
+      const {
+        output: [
+          { code }
+        ]
+      } = await bundle.generate({ format: 'iife', name: 'cfg' });
 
       // then
       new Function('expect', code)(expect);
@@ -36,7 +40,11 @@ describe('rollup-plugin-bpmnlint', function() {
       );
 
       // when
-      const { code } = await bundle.generate({ format: 'iife', moduleName: 'cfg' });
+      const {
+        output: [
+          { code }
+        ]
+      } = await bundle.generate({ format: 'iife', name: 'cfg' });
 
       // then
       new Function('expect', code)(expect);
@@ -51,7 +59,11 @@ describe('rollup-plugin-bpmnlint', function() {
     const bundle = await createBundle({ input: 'test/fixtures/basic.js' });
 
     // when
-    const { code, map } = await bundle.generate({ sourcemap: true, format: 'esm' });
+    const {
+      output: [
+        { code, map }
+      ]
+    } = await bundle.generate({ sourcemap: true, format: 'esm' });
 
     // then
     expect(code).to.exist;
