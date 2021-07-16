@@ -1,6 +1,6 @@
 # rollup-plugin-bpmnlint
 
-[![Build Status](https://travis-ci.com/nikku/rollup-plugin-bpmnlint.svg?branch=master)](https://travis-ci.com/nikku/rollup-plugin-bpmnlint)
+[![CI](https://github.com/nikku/rollup-plugin-bpmnlint/actions/workflows/CI.yml/badge.svg)](https://github.com/nikku/rollup-plugin-bpmnlint/actions/workflows/CI.yml)
 
 Convert [bpmnlint](https://github.com/bpmn-io/bpmnlint) config files to consumable modules.
 
