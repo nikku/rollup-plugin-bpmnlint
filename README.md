@@ -26,8 +26,8 @@ import { rollup } from 'rollup';
 
 import bpmnlint from 'rollup-plugin-bpmnlint';
 
-import nodeResolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import nodeResolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 
 rollup({
   input: 'main.js',
