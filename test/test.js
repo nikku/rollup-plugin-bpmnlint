@@ -46,6 +46,7 @@ describe('rollup-plugin-bpmnlint', function() {
 
 
   it('should output sourcemap', async function() {
+
     // given
     const bundle = await createBundle({ input: 'test/fixtures/basic.js' });
 
