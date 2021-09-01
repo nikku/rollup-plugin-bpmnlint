@@ -1,4 +1,6 @@
-const compileConfig = require('bpmnlint/lib/support/compile-config');
+const requireLocal = createScopedRequire(process.cwd());
+
+const compileConfig = requireLocal('bpmnlint/lib/support/compile-config');
 
 const { createFilter } = require('rollup-pluginutils');
 
@@ -54,3 +56,25 @@ function bpmnlint(options = {}) {
 }
 
 module.exports = bpmnlint;
+
+
+// helpers ////////////////////
+
+function createScopedRequire(cwd) {
+  const Module = require('module');
+  const path = require('path');
+
+  // shim createRequireFromPath for Node < 10.12
+  // shim createRequireFromPath for Node < 12.2.0
+  const createRequireFromPath = Module.createRequire || Module.createRequireFromPath || (filename => {
+    const mod = new Module(filename, null);
+
+    mod.filename = filename;
+    mod.paths = Module._nodeModulePaths(path.dirname(filename));
+    mod._compile('module.exports = require;', filename);
+
+    return mod.exports;
+  });
+
+  return createRequireFromPath(path.join(cwd, '__placeholder__.js'));
+}
