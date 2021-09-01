@@ -1,5 +1,11 @@
 const requireLocal = createScopedRequire(process.cwd());
 
+try {
+  requireLocal('bpmnlint');
+} catch (err) {
+  throw new Error('cannot find local <bpmnlint>, did you install it?');
+}
+
 const compileConfig = requireLocal('bpmnlint/lib/support/compile-config');
 
 const { createFilter } = require('rollup-pluginutils');
