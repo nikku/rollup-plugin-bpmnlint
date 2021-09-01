@@ -6,6 +6,10 @@ All notable changes to [rollup-plugin-bpmnlint](https://github.com/nikku/rollup-
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.3.0
+
+* `FEAT`: throw with meaningful error if `bpmnlint` cannot be found
+
 ## 0.2.0
 
 * `FIX`: require `bpmnlint` from local path
