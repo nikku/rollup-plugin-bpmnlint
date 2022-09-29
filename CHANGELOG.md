@@ -6,6 +6,10 @@ All notable changes to [rollup-plugin-bpmnlint](https://github.com/nikku/rollup-
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.3.1
+
+* `DEPS`: support `bpmnlint>=8`
+
 ## 0.3.0
 
 * `FEAT`: throw with meaningful error if `bpmnlint` cannot be found
@@ -16,11 +20,11 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 0.1.5
 
-* `CHORE`: support `bpmnlint@7`
+* `DEPS`: support `bpmnlint@7`
 
 ## 0.1.4
 
-* `CHORE`: support `bpmnlint@6`
+* `DEPS`: support `bpmnlint@6`
 
 ## 0.1.3
 
@@ -28,11 +32,11 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 0.1.2
 
-* `CHORE`: support `bpmnlint@5`
+* `DEPS`: support `bpmnlint@5`
 
 ## 0.1.1
 
-* `CHORE`: support `bpmnlint@4`
+* `DEPS`: support `bpmnlint@4`
 
 ## 0.1.0
 
