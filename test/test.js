@@ -4,7 +4,7 @@ var { rollup } = require('rollup');
 var bpmnlint = require('../');
 
 function createBundle(options, bpmnlintOptions = {}) {
-  options.plugins = [bpmnlint(bpmnlintOptions)];
+  options.plugins = [ bpmnlint(bpmnlintOptions) ];
 
   return rollup(options);
 }
