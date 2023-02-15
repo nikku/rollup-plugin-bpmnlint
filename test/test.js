@@ -1,6 +1,8 @@
 var { expect } = require('chai');
 var { rollup } = require('rollup');
 
+var compileConfig = require('bpmnlint/lib/support/compile-config');
+
 var bpmnlint = require('../');
 
 function createBundle(options, bpmnlintOptions = {}) {
@@ -18,6 +20,25 @@ describe('rollup-plugin-bpmnlint', function() {
 
       // given
       const bundle = await createBundle({ input: 'test/fixtures/basic.js' });
+
+      // when
+      const {
+        output: [
+          { code }
+        ]
+      } = await bundle.generate({ format: 'iife', name: 'cfg' });
+
+      // then
+      new Function('expect', code)(expect);
+    });
+
+
+    it('providing <compileConfig>', async function() {
+
+      // given
+      const bundle = await createBundle({ input: 'test/fixtures/basic.js' }, {
+        compileConfig
+      });
 
       // when
       const {

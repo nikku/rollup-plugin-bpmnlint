@@ -39,12 +39,17 @@ rollup({
       include: '**/.bpmnlintrc',
 
       // undefined per default
-      exclude: [ ]
+      exclude: [ ],
+
+      // an compiler that transforms a .bpmnlintrc
+      // file into the actual bpmnlint configuration
+      compileConfig: null
     })
   ]
 });
 ```
 
-# License
+
+## License
 
 MIT
