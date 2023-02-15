@@ -6,6 +6,10 @@ All notable changes to [rollup-plugin-bpmnlint](https://github.com/nikku/rollup-
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.4.1
+
+* `FIX`: resolve local `bpmnlint`
+
 ## 0.4.0
 
 * `FEAT`: lazy resolve `bpmnlint`
