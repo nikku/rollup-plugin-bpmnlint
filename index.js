@@ -2,6 +2,24 @@ const requireLocal = createScopedRequire(process.cwd());
 
 const { createFilter } = require('rollup-pluginutils');
 
+function requireCompiler() {
+
+  let prefix = 'bpmnlint';
+
+  try {
+    const pkg = requireLocal('./package.json');
+
+    // require bpmnlint locally if we operate within the project
+    if (pkg && pkg.name === 'bpmnlint') {
+      prefix = '.';
+    }
+  } catch (err) {
+
+    // ignore, this is expected
+  }
+
+  return requireLocal(`${prefix}/lib/support/compile-config`);
+}
 
 function bpmnlint(options = {}) {
 
@@ -16,7 +34,7 @@ function bpmnlint(options = {}) {
   }
 
   try {
-    compileConfig = compileConfig || requireLocal('bpmnlint/lib/support/compile-config');
+    compileConfig = compileConfig || requireCompiler();
   } catch (err) {
     throw new Error('cannot find local <bpmnlint>. Install it or provide a configuration compiler throught the <compileConfig> option.');
   }
