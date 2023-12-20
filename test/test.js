@@ -125,7 +125,7 @@ describe('rollup-plugin-bpmnlint', function() {
       err = e;
     }
 
-    expectError(err, 'Failed to parse config: Unexpected token \n');
+    expectError(err, 'Failed to parse config: Bad control character in string literal in JSON at position 23');
   });
 
 });
