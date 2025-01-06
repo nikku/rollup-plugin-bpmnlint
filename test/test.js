@@ -107,7 +107,7 @@ describe('rollup-plugin-bpmnlint', function() {
       err = e;
     }
 
-    expectError(err, 'Failed to compile config: cannot resolve config <base> from <bpmnlint-plugin-unknown>');
+    expectError(err, '[plugin bpmnlint] test/fixtures/bpmnlint-config-error.json: Failed to compile config: cannot resolve config <base> from <bpmnlint-plugin-unknown>');
   });
 
 
@@ -125,7 +125,7 @@ describe('rollup-plugin-bpmnlint', function() {
       err = e;
     }
 
-    expectError(err, 'Failed to parse config: Bad control character in string literal in JSON at position 23');
+    expectError(err, '[plugin bpmnlint] test/fixtures/bpmnlint-config-bad-json-error.json: Failed to parse config: Bad control character in string literal in JSON at position 23');
   });
 
 });
