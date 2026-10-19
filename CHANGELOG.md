@@ -6,6 +6,8 @@ All notable changes to [rollup-plugin-bpmnlint](https://github.com/nikku/rollup-
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FIX`: require `bpmnlint/lib/support/compile-config.js` with file extension to support `bpmnlint` packages declaring `exports`
+
 ## 0.4.1
 
 * `FIX`: resolve local `bpmnlint`

@@ -1,7 +1,7 @@
 var { expect } = require('chai');
 var { rollup } = require('rollup');
 
-var compileConfig = require('bpmnlint/lib/support/compile-config');
+var compileConfig = require('bpmnlint/lib/support/compile-config.js');
 
 var bpmnlint = require('../');
 

@@ -18,7 +18,7 @@ function requireCompiler() {
     // ignore, this is expected
   }
 
-  return requireLocal(`${prefix}/lib/support/compile-config`);
+  return requireLocal(`${prefix}/lib/support/compile-config.js`);
 }
 
 function bpmnlint(options = {}) {
